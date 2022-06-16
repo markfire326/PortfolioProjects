@@ -54,5 +54,7 @@ order by PercentPopulationInfected desc
 Select Location, Population,date, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
 From `deductive-eye-345712.COVID19_Project.covid_deaths`
 --Where location = 'Nigeria'
+WHERE 
+location not in ('World', 'European Union', 'International','Upper middle income','High income','Lower middle income','Low income' )
 Group by Location, Population, date
 order by PercentPopulationInfected desc
